@@ -1,0 +1,14 @@
+@startuml
+actor Guest
+participant "Hotel System" as System
+participant "Payment Gateway" as PG
+participant "Email Service" as Mail
+
+Guest -> System: Search Room & Select
+System -> System: Hold Room
+Guest -> System: Enter Info & Pay
+System -> PG: Request Payment
+PG --> System: Payment Result
+System -> Mail: Send Confirmation
+Mail --> Guest: Confirmation Email
+@enduml

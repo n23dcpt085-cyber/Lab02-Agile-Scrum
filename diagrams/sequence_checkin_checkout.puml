@@ -1,0 +1,19 @@
+@startuml
+actor Receptionist
+participant "Hotel System" as System
+participant Room
+participant Guest
+
+Receptionist -> System: Search Reservation
+System -> Receptionist: Show Details
+
+Receptionist -> System: Check-in
+System -> Room: Assign Room
+System -> Guest: Update Status
+
+Receptionist -> System: Check-out
+System -> System: Calculate Charges
+System -> Guest: Show Total
+Receptionist -> Guest: Collect Payment
+System -> Room: Update Room Status
+@enduml
